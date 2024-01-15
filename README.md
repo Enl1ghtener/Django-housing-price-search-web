@@ -9,7 +9,7 @@
 1. 克隆项目到本地：
 
     ```bash
-    git clone https://github.com/your-username/your-repo.git
+    git clone [https://github.com/your-username/your-repo.git](https://github.com/Enl1ghtener/Django-housing-price-search-web)
 
 2. 进入项目目录：
 
