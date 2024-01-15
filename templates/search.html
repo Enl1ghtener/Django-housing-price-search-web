@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Search</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://tse3-mm.cn.bing.net/th/id/OIP-C.IGH3LuEGF4QBD7rSBSQQuAHaH-?w=173&h=187&c=7&r=0&o=5&dpr=1.5&pid=1.7');
+    background-size: cover;
+    background-position: center center; /* 确保图片在容器中央 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+        .header {
+            background-color: #45a049;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="search"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>房价查询</h1>
+    </div>
+    <form action="/student/search/" method="post">
+        {% csrf_token %}
+        <p>
+            <label for="ua">请输入你希望查询的城市名称: </label>
+            <input type="search" name="uname" id="ua" placeholder="城市名称"/>
+            <input type="submit" value="查询">
+        </p>
+    </form>
+</body>
+</html>
+
+
+

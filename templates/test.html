@@ -1,0 +1,168 @@
+<!--search_results.html备份-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price Data Page</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #buttonContainer {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 8px 12px;
+      margin: 0 5px;
+      cursor: pointer;
+      background-color: #4b9efa;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #4b9efa;
+      color: #fff;
+    }
+
+    canvas {
+      border: 1px solid #dddddd;
+      border-radius: 5px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <h1 id="cityName">{{ city_name }}</h1>
+
+</head>
+<body>
+
+  <div id="buttonContainer"></div>
+
+  <script>
+    const buttonContainer = document.getElementById('buttonContainer');
+
+    for (let year = 2014; year <= 2023; year++) {
+      const button = document.createElement('button');
+      button.textContent = `${year}年`;
+      button.onclick = function () {
+        handleYearClick(year);
+      };
+      buttonContainer.appendChild(button);
+    }
+  </script>
+
+  <table id="priceTable">
+    <thead>
+      <tr>
+        <th>年份</th>
+        <th>一月</th>
+        <th>二月</th>
+        <th>三月</th>
+        <th>四月</th>
+        <th>五月</th>
+        <th>六月</th>
+        <th>七月</th>
+        <th>八月</th>
+        <th>九月</th>
+        <th>十月</th>
+        <th>十一月</th>
+        <th>十二月</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 这里将填充价格数据 -->
+    </tbody>
+  </table>
+
+  <canvas id="myChart" width="400" height="200"></canvas>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    var myChart;
+
+    function fetchData(year) {
+      setTimeout(function () {
+        const data = getMockPriceData(year);
+        updateTable(data.labels, data.data, year);
+        updateChart(data.labels, data.data);
+      }, 500);
+    }
+
+    function getMockPriceData(year) {
+      const labels = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
+      let data = [];
+      if (year==2014) { data = {{price.0}};
+      } else if(year==2015) { data = {{price.1}};
+      }else if(year==2016) { data = {{price.2}};
+      }else if(year==2017) { data = {{price.3}};
+      }else if(year==2018) { data = {{price.4}};
+      }else if(year==2019) { data = {{price.5}};
+      }else if(year==2020) { data = {{price.6}};
+      }else if(year==2021) { data = {{price.7}};
+      }else if(year==2022) { data = {{price.8}};
+      }else if(year==2023) { data = {{price.9}};
+      } else { pass;
+      }
+
+      return { labels, data };
+    }
+
+
+    function updateTable(labels, data, year) {
+      const tbody = document.querySelector('#priceTable tbody');
+      const row = `<tr><td>${year}年</td>${labels.map((label, index) => `<td>${data[index]}</td>`).join('')}</tr>`;
+      tbody.innerHTML = row;
+    }
+
+    function updateChart(labels, data) {
+      if (myChart) {
+        myChart.destroy();
+      }
+
+      var ctx = document.getElementById('myChart').getContext('2d');
+      myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: '价格数据',
+            data: data,
+            fill: false,
+            borderColor: 'rgb(21,187,187)',
+            tension: 0.1
+          }]
+        }
+      });
+    }
+
+    function handleYearClick(year) {
+      fetchData(year);
+    }
+
+    fetchData(2023);
+  </script>
+
+</body>
+</html>
