@@ -17,7 +17,7 @@
     cd your-repo
     ```
 
-3. 创建虚拟环境（可选但推荐）：
+3. 创建虚拟环境（可选）：
 
     ```bash
     python -m venv venv
@@ -37,11 +37,9 @@
         source venv/bin/activate
         ```
 
-5. 安装依赖：
+5. 安装依赖
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+   
 
 
 6. 运行开发服务器：
@@ -50,7 +48,7 @@
     python manage.py runserver
     ```
 
-8. 在浏览器中打开 [http://127.0.0.1:8000/](http://127.0.0.1:8000/) 查看项目。
+7. 在浏览器中打开 [http://127.0.0.1:8000/](http://127.0.0.1:8000/) 查看项目。
 
 ## 项目结构
 
