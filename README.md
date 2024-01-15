@@ -2,7 +2,7 @@
 
 Brief Project Overview: This project utilizes the Django framework to create a web application for querying housing price information in various cities. It involves web scraping to collect housing price data. The backend reads and processes the data, passing it to the frontend for display and generating line charts.
 
-# README.md同时有以下语言的版本
+# README.md is also available in the following languages:
 - EN [English](README_EN.md)
 - CN [简体中文](README_CN.md)
 
