@@ -84,9 +84,6 @@ The code only has Chinese comments.
 
 This is a practice project and may have some shortcomings, with potential updates in the future.
 
-## Contribution
-
-
 
 ## License
 
