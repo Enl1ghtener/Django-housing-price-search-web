@@ -14,7 +14,7 @@ Below are the basic steps to run the project locally:
 1. Clone the project to your local machine:
 
     ```bash
-    git clone [https://github.com/your-username/your-repo.git](https://github.com/Enl1ghtener/Django-housing-price-search-web)
+    git clone [https://github.com/your-username/your-repo.git](https://github.com/Enl1ghtener/Django-housing-price-srch-web)
     ```
 
 2. Navigate to the project directory:
