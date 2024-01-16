@@ -78,7 +78,7 @@ Data is obtained through the `crwal_houseprice.py` spider program. Due to the va
 
 ## Notes
 
-Apart from the city query feature, the project also includes a login and register functionality for student testing purposes. The query functionality is also implemented within the `stu` app.
+In addition to the city search function, the project also includes a test function for student login of login and register, which is written in the STU
 
 The code only has Chinese comments.
 
